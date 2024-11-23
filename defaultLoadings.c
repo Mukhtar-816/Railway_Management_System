@@ -7,7 +7,7 @@ int createTextFile(int isExist)
 
     if (isExist == 1)
     {
-        printf("File Already exits");
+        // printf("File Already exits");
     }
     else
     {

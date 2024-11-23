@@ -7,9 +7,13 @@ int IntroMenu(const char arr[][20], int len)
 
     int res;
 
-    printf("\n****************************Railway Management System****************************\n");
+    printf("\n\n\n*****************************************************************************\n");
+    printf("*                                                                           *\n");
+    printf("*                         Railway Management System                         *\n");
+    printf("*                                                                           *\n");
+    printf("*****************************************************************************\n");
 
-    printf("\nSelect an option :-");
+    printf("\nSelect an option :-\n");
     for (int i = 0; i < len; i++)
     {
         printf("\n%d. %s", i + 1, arr[i]);

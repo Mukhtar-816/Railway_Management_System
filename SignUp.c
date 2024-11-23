@@ -38,7 +38,7 @@ int SignUp()
             fptr = fopen("users.txt", "a");
             fprintf(fptr, "username : %s password : %s\n", user.username, user.pwd);
             fclose(fptr);
-            printf("\nUser Successfully Created.");
+            printf("\n\nUser Successfully Created.");
             Sleep(1000);
             system("cls");
             Authentication();
