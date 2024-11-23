@@ -2,14 +2,19 @@
 #ifndef RAILWAY_MAIN
 #define RAILWAY_MAIN
 
+//============================ USER/ADMIN Home ==========================//
+int Home();
 
 
-//============================autoLoadFunctions=========================/
+
+//============================autoLoadFunctions=========================//
 int createTextFile(int isExist);
-void loadUsersFile();
+int LoadUsers();
+
 
 //----------------Authentication Modules-----------------//
 int Authentication();
+int AuthValidator(char username[], char pwd[]);
 int SignUp();
 int SignIn();
 int Logout();
@@ -19,8 +24,10 @@ int Logout();
 int IntroMenu(const char arr[][20], int len);
 
 
+
 //=========================Error Handlers======================//
 int Invalid_Error(char message[20]);
+
 
 //========================load arrays=========================//
 extern const char user_arr[6][20];  // Declare the user menu options

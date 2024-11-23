@@ -1,15 +1,1 @@
-username : Mukhtar 
-gender : M 
-password : 123456
-
-username : Alishba 
-gender : F 
-password : 123456
-
-username : Amna12 
-gender : F 
-password : 123456
-
-username : he ra lal 
-gender : M 
-password : 123456
+username : Mukhtar password : pass12
