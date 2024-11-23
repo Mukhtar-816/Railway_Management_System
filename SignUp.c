@@ -16,6 +16,12 @@ int SignUp()
 {
     FILE *fptr;
     int valid = 0;
+    fptr = fopen("currentuser.txt", "r");
+    char str[20];
+    char type[7];
+    fgets(str, 20, fptr);
+    sscanf(str, "type : %s", type);
+    fclose(fptr);
     while (!valid)
     {
         printf("Enter Username (max 6 characters): ");
@@ -35,7 +41,7 @@ int SignUp()
 
         if (strlen(user.username) != 0 /*(user.gender == 'M' || user.gender == 'F' || user.gender == 'm' || user.gender == 'f')*/ && strlen(user.pwd) == 6)
         {
-            fptr = fopen("users.txt", "a");
+            fptr = strlen(type) == 5 ? fopen("admins.txt", "a") : fopen("users.txt", "a");
             fprintf(fptr, "username : %s password : %s\n", user.username, user.pwd);
             fclose(fptr);
             printf("\n\nUser Successfully Created.");

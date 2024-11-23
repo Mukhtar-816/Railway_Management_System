@@ -10,10 +10,6 @@ int main()
 {
 
     FILE *fptr;
-    fptr = fopen("users.txt", "r");
-    int isExists = fptr == NULL ? 0 : 1;
-    createTextFile(isExists);
-    fclose(fptr);
 
     int len = sizeof(users) / sizeof(users[0]);
     int res = IntroMenu(users, len);

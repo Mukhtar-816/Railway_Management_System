@@ -5,7 +5,13 @@
 
 int AuthValidator(char username[], char pwd[]){
     FILE *fptr;
-    fptr = fopen("users.txt", "r");
+    fptr = fopen("currentuser.txt", "r");
+    char str[20];
+    char type[7];
+    fgets(str, 20, fptr);
+    sscanf(str, "type : %s", type);
+    fclose(fptr);
+    fptr = strlen(type) == 5 ? fopen("admins.txt", "r") : fopen("users.txt", "r");
     char tempLine[100];
         char fileusername[20];
         char filepwd[7];
