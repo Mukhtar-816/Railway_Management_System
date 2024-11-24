@@ -12,11 +12,38 @@ struct user_arr
     char pwd[7];
 } user;
 
-int SignUp()
+
+
+int checkUniqueID(int newID) {
+    FILE *fptr;
+    char line[100];
+    fptr = fopen("txtFiles/users.txt", "r");
+
+    if (fptr == NULL) {
+        return 1;  
+    }
+
+    while (fgets(line, sizeof(line), fptr)) {
+        int id;
+        if (sscanf(line, "id : %d", &id) == 1) {
+            if (id == newID) {
+                fclose(fptr);
+                return 0;  
+            }
+        }
+    }
+
+    fclose(fptr);
+    return 1;  
+};
+
+
+
+void SignUp()
 {
     FILE *fptr;
     int valid = 0;
-    fptr = fopen("currentuser.txt", "r");
+    fptr = fopen("txtFiles/currentuser.txt", "r");
     char str[20];
     char type[7];
     fgets(str, 20, fptr);
@@ -41,8 +68,24 @@ int SignUp()
 
         if (strlen(user.username) != 0 /*(user.gender == 'M' || user.gender == 'F' || user.gender == 'm' || user.gender == 'f')*/ && strlen(user.pwd) == 6)
         {
-            fptr = strlen(type) == 5 ? fopen("admins.txt", "a") : fopen("users.txt", "a");
-            fprintf(fptr, "username : %s password : %s\n", user.username, user.pwd);
+            int uniqueID = 0;
+            int newID;
+
+            while (!uniqueID) {
+                newID = generateRandomID();
+                uniqueID = checkUniqueID(newID);  
+            }
+
+
+            fptr = strlen(type) == 5 ? fopen("txtFiles/admins.txt", "a") : fopen("txtFiles/users.txt", "a");
+
+            fprintf(fptr, "id : %d\n", newID);
+            fprintf(fptr, "username : %s\n", user.username);
+            fprintf(fptr, "password : %s\n", user.pwd);
+            fprintf(fptr, "Booked : \n");      
+            fprintf(fptr, "Cancelled : \n"); 
+            fprintf(fptr, "\n");  
+
             fclose(fptr);
             printf("\n\nUser Successfully Created.");
             Sleep(1000);

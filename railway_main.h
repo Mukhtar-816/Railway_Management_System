@@ -3,21 +3,25 @@
 #define RAILWAY_MAIN
 
 //============================ USER/ADMIN Home ==========================//
-int Home();
+void InitiatingCall();
+void Home();
 
 
+//=========================== Basic Functions ==========================//
+void ViewTrains();
+void BookTicket();
+int generateRandomID();
 
-//============================autoLoadFunctions=========================//
+//============================ AutoLoadFunctions =========================//
 int createTextFile(int isExist);
-int LoadUsers();
 
 
-//----------------Authentication Modules-----------------//
-int Authentication();
+//================ Authentication Modules =================//
+void Authentication();
 int AuthValidator(char username[], char pwd[]);
-int SignUp();
-int SignIn();
-int Logout();
+void SignUp();
+void SignIn();
+void Logout();
 
 
 //=============================Intro Menu========================//
@@ -33,7 +37,7 @@ int Invalid_Error(char message[20]);
 extern const char user_arr[6][20];  // Declare the user menu options
 extern const char admin_arr[3][20];  // Declare the admin menu options
 extern const char authentication_arr[3][20];
-extern const char users[2][20];
+extern const char users[3][20];
 
 
 #endif

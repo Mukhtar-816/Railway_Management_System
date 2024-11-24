@@ -10,7 +10,7 @@ struct userCredential
     char C_pwd[7];
 } user;
 
-int SignIn()
+void SignIn()
 {
     printf("Enter the username : ");
     getchar();
@@ -34,8 +34,8 @@ int SignIn()
         }
         else
         {
-            printf("\n===============< Invalid Credentials >===============");
-            Sleep(3000);
+            printf("\n\n===============< Invalid Credentials >===============");
+            Sleep(2000);
             system("cls");
             Authentication();
         }

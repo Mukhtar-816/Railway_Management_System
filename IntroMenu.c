@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "railway_main.h"
 #include <stdlib.h>
+#include <string.h>
 
 int IntroMenu(const char arr[][20], int len)
 {
@@ -21,13 +22,23 @@ int IntroMenu(const char arr[][20], int len)
 
     printf("\n\nEnter Choice : ");
     scanf("%d", &res);
-    if (res > len || res <= 0)
+    if (res > len || res <= 0 && strcmp(arr[res - 1], "Exit") != 0)
     {
         char mes[20] = "\nInvalid Option";
         Invalid_Error(mes);
     }
-    else if (res == len)
+    else if (res == len && strcmp(arr[res - 1], "Logout") == 0)
     {
+        Logout();
+    }
+    else if (res == len && strcmp(arr[res - 1], "Quit") == 0)
+    {
+        system("cls");
+        InitiatingCall();
+    }
+    else if (res == len && strcmp(arr[res - 1], "Exit") == 0)
+    {
+        return 0;
         exit;
     }
     else

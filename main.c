@@ -6,9 +6,8 @@
 #include <conio.h>
 #include <stdlib.h>
 
-int main()
+void InitiatingCall()
 {
-
     FILE *fptr;
 
     int len = sizeof(users) / sizeof(users[0]);
@@ -16,9 +15,15 @@ int main()
     if (res)
     {
         system("cls");
-        fptr = fopen("currentuser.txt", "w");
+        fptr = fopen("txtFiles/currentuser.txt", "wb");
         fprintf(fptr, "type : %s", users[res - 1]);
         fclose(fptr);
         Authentication();
     }
+}
+
+int main()
+{
+    // Starting
+    InitiatingCall();
 }

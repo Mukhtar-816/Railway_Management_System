@@ -1,0 +1,15 @@
+id : 7136
+username : Mukhtar
+password : pass12
+Booked : 
+[ ID : 1601 Train_No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 ]
+[ Train_No : 105 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 ]
+Cancelled : 
+
+id : 9883
+username : Ali
+password : fast12
+Booked : 
+[ Train_No : 104 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 ]
+Cancelled : 
+

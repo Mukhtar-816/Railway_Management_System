@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "railway_main.h": "c"
+        "railway_main.h": "c",
+        "stdio.h": "c"
     }
 }
