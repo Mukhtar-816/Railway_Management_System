@@ -12,32 +12,33 @@ struct user_arr
     char pwd[7];
 } user;
 
-
-
-int checkUniqueID(int newID) {
+int checkUniqueID(int newID)
+{
     FILE *fptr;
     char line[100];
     fptr = fopen("txtFiles/users.txt", "r");
 
-    if (fptr == NULL) {
-        return 1;  
+    if (fptr == NULL)
+    {
+        return 1;
     }
 
-    while (fgets(line, sizeof(line), fptr)) {
+    while (fgets(line, sizeof(line), fptr))
+    {
         int id;
-        if (sscanf(line, "id : %d", &id) == 1) {
-            if (id == newID) {
+        if (sscanf(line, "id : %d", &id) == 1)
+        {
+            if (id == newID)
+            {
                 fclose(fptr);
-                return 0;  
+                return 0;
             }
         }
     }
 
     fclose(fptr);
-    return 1;  
+    return 1;
 };
-
-
 
 void SignUp()
 {
@@ -66,18 +67,55 @@ void SignUp()
         printf("\nPlease Wait...........................!");
         Sleep(2000);
 
-        if (strlen(user.username) != 0 /*(user.gender == 'M' || user.gender == 'F' || user.gender == 'm' || user.gender == 'f')*/ && strlen(user.pwd) == 6)
+        if (strstr(type, "Admin"))
+        {
+            if (strlen(user.username) != 0 /*(user.gender == 'M' || user.gender == 'F' || user.gender == 'm' || user.gender == 'f')*/ && strlen(user.pwd) == 6)
+            {
+                int uniqueID = 0;
+                int newID;
+
+                while (!uniqueID)
+                {
+                    newID = generateRandomID(0);
+                    uniqueID = checkUniqueID(newID);
+                }
+
+                fptr = fopen("txtFiles/admins.txt", "a");
+
+                fprintf(fptr, "id : %d\n", newID);
+                fprintf(fptr, "username : %s\n", user.username);
+                fprintf(fptr, "password : %s\n", user.pwd);
+                fprintf(fptr, "AddedTrains :\n");
+                fprintf(fptr, "RemovedTrains :\n");
+                fprintf(fptr, "\n");
+
+                fclose(fptr);
+                printf("\n\nAdmin Created Successfully.");
+                Sleep(1000);
+                system("cls");
+                Authentication();
+                valid = 1;
+            }
+            else
+            {
+                printf("\nInvalid Inputs..!");
+                Sleep(1000);
+                system("cls");
+            }
+        }
+        else if (strstr(type, "User")){
+            if (strlen(user.username) != 0 /*(user.gender == 'M' || user.gender == 'F' || user.gender == 'm' || user.gender == 'f')*/ && strlen(user.pwd) == 6)
         {
             int uniqueID = 0;
             int newID;
 
             while (!uniqueID) {
-                newID = generateRandomID();
+                newID = generateRandomID(0);
                 uniqueID = checkUniqueID(newID);  
             }
 
 
-            fptr = strlen(type) == 5 ? fopen("txtFiles/admins.txt", "a") : fopen("txtFiles/users.txt", "a");
+            fptr = fopen("txtFiles/users.txt", "a");
 
             fprintf(fptr, "id : %d\n", newID);
             fprintf(fptr, "username : %s\n", user.username);
@@ -87,7 +125,7 @@ void SignUp()
             fprintf(fptr, "\n");  
 
             fclose(fptr);
-            printf("\n\nUser Successfully Created.");
+            printf("\n\nUser Created Successfully.");
             Sleep(1000);
             system("cls");
             Authentication();
@@ -98,6 +136,7 @@ void SignUp()
             printf("\nInvalid Inputs..!");
             Sleep(1000);
             system("cls");
+        }
         }
     }
 }

@@ -1,5 +1,5 @@
-No : 101 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 101
-No : 102 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 116
-No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 112
+No : 102 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 115
+No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 111
 No : 104 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 117
 No : 105 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 116
+No : 915 Name : Karyana From : Mir To : pak Cost : 567 Time : 09:00 Slots : 89

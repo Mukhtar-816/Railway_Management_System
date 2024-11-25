@@ -49,7 +49,7 @@ void ShowUsersCancelledTicket()
                     }
                     if (sscanf(tempLine, "ID : %d Train_No : %d Name : %s From : %s To : %s Cost : %d Time : %s ", &Td.ID, &Td.No, &Td.Name, &Td.From, &Td.To, &Td.Cost, &Td.Time))
                     {
-                        printf("| %-8d |  | %-8d |  | %-12s |  | %-8s |  | %-9s |  | %-6d |  | %-6s |  \n", Td.ID, Td.No, Td.Name, Td.From, Td.To, Td.Cost, Td.Time);
+                        printf("| %-9d |  | %-8d |  | %-12s |  | %-9s |  | %-9s |  | %-6d |  | %-6s |  \n", Td.ID, Td.No, Td.Name, Td.From, Td.To, Td.Cost, Td.Time);
                     }
                 }
             }

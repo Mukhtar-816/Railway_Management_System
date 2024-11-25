@@ -1,2 +1,0 @@
-type : Admin
-userID : 3010

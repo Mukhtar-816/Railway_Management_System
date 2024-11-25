@@ -3,13 +3,20 @@
 #include <time.h>
 #include "railway_main.h"
 
-int RandomID() {
-    return (rand() % 9000) + 1000;
+int RandomID(int lim)
+{
+    if (lim == 3)
+    {
+        return (rand() % 900) + 100; 
+    }
+    else
+    {
+        return (rand() % 9000) + 1000;
+    }
 }
 
-int generateRandomID() {
-   
-    srand(time(0));
-
-    return RandomID();
+int generateRandomID(int lim)
+{
+    srand(time(0)); 
+    return RandomID(lim); 
 }

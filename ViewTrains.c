@@ -22,17 +22,17 @@ void ViewTrains()
     char tempLine[100];
 
     printf("\n Train Shedule:- \n\n");
-    printf("=================================================================================================\n");
-    printf("| Train No |  |  Train Name  |  |   From    |  |    To    |  |  Cost  |  |  Time  |  |  Slots  |\n");
-    printf("=================================================================================================\n");
+    printf("===================================================================================================\n");
+    printf("| Train No |  |  Train Name  |  |    From    |  |     To     |  |  Cost  |  |  Time  |  |  Slots  |\n");
+    printf("===================================================================================================\n");
     while (fgets(tempLine, sizeof(tempLine), fptr))
     {
         if (sscanf(tempLine, "No : %d Name : %s From : %s To : %s Cost : %d Time : %s Slots : %d", &Td.No, &Td.Name, &Td.From, &Td.To, &Td.Cost, &Td.Time, &Td.Slots))
         {
-            printf("| %-8d |  | %-12s |  | %-8s |  | %-9s |  | %-6d |  | %-6s |  | %-7d | \n", Td.No, Td.Name, Td.From, Td.To, Td.Cost, Td.Time, Td.Slots);
+            printf("| %-8d |  | %-12s |  | %-10s |  | %-10s |  | %-6d |  | %-6s |  | %-7d | \n", Td.No, Td.Name, Td.From, Td.To, Td.Cost, Td.Time, Td.Slots);
         }
     }
-    printf("=================================================================================================\n");
+    printf("====================================================================================================\n");
     fclose(fptr);
 
     

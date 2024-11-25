@@ -11,6 +11,7 @@ void Home();
 void ViewTrains();
 void BookTicket();
 int generateRandomID();
+int checkUniqueID();
 void CancelTicket();
 void ShowUsersBookedTicket();
 void ShowUsersCancelledTicket();

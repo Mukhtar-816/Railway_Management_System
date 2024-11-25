@@ -1,14 +1,12 @@
-username : Mukhtar password : pass12
+id : 6167
+username : Afsar
+password : pass12
+AddedTrains :
+RemovedTrains :
 
-id : 5555
+id : 5615
 username : Mukhtar
 password : pass12
-Booked :
-Cancelled :
-
-id : 3010
-username : Ali
-password : pass12
-Booked :
-Cancelled :
+AddedTrains :
+RemovedTrains :
 
