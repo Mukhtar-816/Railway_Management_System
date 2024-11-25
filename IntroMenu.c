@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int IntroMenu(const char arr[][20], int len)
+int IntroMenu(const char arr[][30], int len)
 {
 
     int res;

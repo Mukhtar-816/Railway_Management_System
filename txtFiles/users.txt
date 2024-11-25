@@ -1,15 +1,19 @@
-id : 7136
+id : 4523
 username : Mukhtar
 password : pass12
 Booked : 
-[ ID : 1601 Train_No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 ]
-[ Train_No : 105 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 ]
+ID : 2811 Train_No : 101 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00
+ID : 2733 Train_No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00
+ID : 2005 Train_No : 101 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00
+ID : 6207 Train_No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00
 Cancelled : 
+ID : 2327 Train_No : 105 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00
+ID : 7742 Train_No : 104 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00
+ID : 6206 Train_No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00
 
-id : 9883
+id : 4549
 username : Ali
 password : fast12
 Booked : 
-[ Train_No : 104 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 ]
 Cancelled : 
 

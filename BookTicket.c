@@ -80,7 +80,7 @@ void BookTicket()
                 {
                     _T.Slots -= 1;  
                     found = 1;
-                    snprintf(updatedBooking, sizeof(updatedBooking), "[ ID : %d Train_No : %d Name : %s From : %s To : %s Cost : %d Time : %s ]\n", generateRandomID(), _T.No, _T.Name, _T.From, _T.To, _T.Cost, _T.Time);
+                    snprintf(updatedBooking, sizeof(updatedBooking), "ID : %d Train_No : %d Name : %s From : %s To : %s Cost : %d Time : %s\n", generateRandomID(), _T.No, _T.Name, _T.From, _T.To, _T.Cost, _T.Time);
                     fprintf(tempFile, "No : %d Name : %s From : %s To : %s Cost : %d Time : %s Slots : %d\n",
                             _T.No, _T.Name, _T.From, _T.To, _T.Cost, _T.Time, _T.Slots);
                     system("cls");

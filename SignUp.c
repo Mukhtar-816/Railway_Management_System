@@ -82,8 +82,8 @@ void SignUp()
             fprintf(fptr, "id : %d\n", newID);
             fprintf(fptr, "username : %s\n", user.username);
             fprintf(fptr, "password : %s\n", user.pwd);
-            fprintf(fptr, "Booked : \n");      
-            fprintf(fptr, "Cancelled : \n"); 
+            fprintf(fptr, "Booked :\n");      
+            fprintf(fptr, "Cancelled :\n"); 
             fprintf(fptr, "\n");  
 
             fclose(fptr);

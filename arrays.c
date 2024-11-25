@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-const char user_arr[6][20] = {"View Trains", "Book Ticket", "View Ticket", "Search Ticket No", "Cancel Ticket", "Logout"};
-const char admin_arr[3][20] = {"View Trains", "View All Bookings", "Logout"};
-const char authentication_arr[3][20] = {"Login", "SignUp", "Quit"};
-const char users[3][20] = {"Admin", "User", "Exit"};
+const char user_arr[6][30] = {"View Trains", "Book Ticket", "Cancel Ticket", "View Booked Tickets", "View Cancelled Tickets", "Logout"};
+const char admin_arr[5][30] = {"View Trains", "View All Bookings","Add Train", "Remove Train", "Logout"};
+const char authentication_arr[3][30] = {"Login", "SignUp", "Quit"};
+const char users[3][30] = {"Admin", "User", "Exit"};

@@ -39,4 +39,32 @@ void Home()
         system("cls");
         BookTicket();
     }
+    else if (res == 3 && !admin)
+    {
+        Sleep(1000);
+        system("cls");
+        CancelTicket();
+        }
+    else if (res == 4 && !admin)
+    {
+        Sleep(1000);
+        system("cls");
+        ShowUsersBookedTicket();
+        printf("\n\nEnter Any Key to Go Back...!");
+        getchar();
+        getchar();
+        system("cls");
+        Home();
+    }
+    else if (res == 5 && !admin)
+    {
+        Sleep(1000);
+        system("cls");
+        ShowUsersCancelledTicket();
+        printf("\n\nEnter Any Key to Go Back...!");
+        getchar();
+        getchar();
+        system("cls");
+        Home();
+    }
 }

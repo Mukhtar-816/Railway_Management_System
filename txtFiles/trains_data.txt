@@ -1,5 +1,5 @@
-No : 101 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 106
-No : 102 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 118
-No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 118
-No : 104 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 118
-No : 105 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 119
+No : 101 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 101
+No : 102 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 116
+No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 112
+No : 104 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 117
+No : 105 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 116
