@@ -7,13 +7,18 @@ void InitiatingCall();
 void Home();
 
 
-//=========================== Basic Functions ==========================//
+//=========================== User Functions ==========================//
 void ViewTrains();
 void BookTicket();
 int generateRandomID();
 void CancelTicket();
 void ShowUsersBookedTicket();
 void ShowUsersCancelledTicket();
+
+//============================= Admin Functions =============================//
+void AddTrain();
+void RemoveTrain();
+void ViewAllBookings();
 
 //============================ AutoLoadFunctions =========================//
 int createTextFile(int isExist);
