@@ -70,11 +70,10 @@ char generateUsername(char email[50], char username[50])
     username[i] = '\0';
 }
 
-
-
 int main()
 {
     char password2[50];
+    FILE *fp;
     printf("\n------------Welcome to the login portal of Railway Managemnet System--------------");
     printf("\nSelect the option from the given menu");
     printf("\nPress 1 to Sign up");
@@ -106,12 +105,23 @@ int main()
             {
                 printf("\n\nYour password matched.");
                 generateUsername(person.email, person.username);
-                printf("\nYour username is %s", person.username);
+                fp = fopen("Users.txt", "a+");
+                fwrite(&person,sizeof(struct userinformation), 1, fp);
+                if (fwrite != 0)
+                {
+                    printf("\n\nUser registration is successful, Your user name is %s", person.username);
+                }
+                else
+                {
+                    printf("\n\nSorry something went wrong.");
+                }
+                fclose(fp);
             }
             else
             {
                 printf("\n\nYour password donot matched.");
             }
+        break;
     }
     return 0;
 }
