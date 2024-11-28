@@ -103,4 +103,92 @@ void BookTicket()
         }
     }
 
-    
+    fclose(fptr);
+    fclose(tempFile);
+
+    if (found && !invalidTrainNo)
+    {
+        remove("txtFiles/trains_data.txt");
+        rename("txtFiles/tempFile.txt", "txtFiles/trains_data.txt");
+
+        BookFile = fopen("txtFiles/users.txt", "r+");
+        if (BookFile == NULL)
+        {
+            printf("Error opening users.txt file!\n");
+            return;
+        }
+
+        tempUserFile = fopen("txtFiles/tempUserFile.txt", "w");
+        if (tempUserFile == NULL)
+        {
+            printf("Error creating tempUserFile.txt file!\n");
+            fclose(BookFile);
+            return;
+        }
+
+        char userLine[300];
+        int insideBookedSection = 0;
+
+        while (fgets(userLine, sizeof(userLine), BookFile))
+        {
+            if (strstr(userLine, "id :"))
+            {
+                int userID;
+                sscanf(userLine, "id : %d", &userID);
+
+                if (userID == ID)
+                {
+                    fprintf(tempUserFile, "%s", userLine);
+
+                    while (fgets(userLine, sizeof(userLine), BookFile))
+                    {
+                        if (strstr(userLine, "Booked :"))
+                        {
+                            insideBookedSection = 1;
+                            fprintf(tempUserFile, "%s", userLine);
+                            break;
+                        }
+                        else
+                        {
+                            fprintf(tempUserFile, "%s", userLine);
+                        }
+                    }
+
+                    if (insideBookedSection)
+                    {
+                        fprintf(tempUserFile, "%s", updatedBooking);
+                        while (fgets(userLine, sizeof(userLine), BookFile))
+                        {
+                            fprintf(tempUserFile, "%s", userLine);
+                        }
+                    }
+                }
+                else
+                {
+                    fprintf(tempUserFile, "%s", userLine);
+                }
+            }
+            else
+            {
+                fprintf(tempUserFile, "%s", userLine);
+            }
+        }
+
+        fclose(BookFile);
+        fclose(tempUserFile);
+
+        remove("txtFiles/users.txt");
+        rename("txtFiles/tempUserFile.txt", "txtFiles/users.txt");
+    }
+    else
+    {
+        printf("\nInvalid Train No.\n");
+        remove("txtFiles/tempFile.txt");
+    }
+
+    printf("\n\nEnter Any Key to Exit...");
+    getchar();
+    getchar();
+    system("cls");
+    Home();
+}
