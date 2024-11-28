@@ -1,6 +1,14 @@
 //working on login portal structure.
+//Converted password into unreadable form
+// Added password authentication
+//Generated username form the email address
 #include <stdio.h>
 #include <string.h>
+#include <conio.h>
+#include <windows.h>
+#define Enter 13
+#define Backspace 8
+
 
 struct userinformation{
     char fullName[50];
@@ -17,26 +25,56 @@ void takeinput(char input[50])
     input[strlen(input) - 1] = 0;
 }
 
+void takepassword(char pwd[50])
+{
+    int i = 0;
+    char ch;
+    while(1)
+    {
+        ch = getch();
+        if (ch == Enter)
+        {
+            pwd[i] = '\0';
+            break;
+        }
+        else if (ch == Backspace)
+        {
+            if (i > 0)
+            {
+                i--;
+                printf("\b \b");
+            }
+        }
+        else
+        {
+            pwd[i++] = ch;
+            printf("* \b");
+        }
+    }
+}
+
 char generateUsername(char email[50], char username[50])
 {
-    for (int i = 0; i < strlen(email); i++)
+    int i;
+    for (i = 0; i < strlen(email); i++)
     {
         if (email[i] == '@')
         {
             break;
         }
-        else if (email[i] != '@')
+        else
         {
             username[i] = email[i];
         } 
     }
+    username[i] = '\0';
 }
 
 
 
 int main()
 {
-    
+    char password2[50];
     printf("\n------------Welcome to the login portal of Railway Managemnet System--------------");
     printf("\nSelect the option from the given menu");
     printf("\nPress 1 to Sign up");
@@ -58,8 +96,22 @@ int main()
             printf("\nEnter your phone number:  ");
             takeinput(person.phone);
             printf("\nEnter your password:  ");
-            takeinput(person.password);
+            takepassword(person.password);
+            //printf("%s", person.password);
+            printf("\nConfirm your password:  ");
+            takepassword(password2);
             
+            //Matching the usergiven password
+            if (!strcmp (person.password, password2))
+            {
+                printf("\n\nYour password matched.");
+                generateUsername(person.email, person.username);
+                printf("\nYour username is %s", person.username);
+            }
+            else
+            {
+                printf("\n\nYour password donot matched.");
+            }
     }
     return 0;
 }
