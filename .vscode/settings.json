@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "railway_main.h": "c",
-        "stdio.h": "c",
-        "windows.h": "c"
-    }
-}
