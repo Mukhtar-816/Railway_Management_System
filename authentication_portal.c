@@ -88,6 +88,7 @@ int main()
     switch(userinput)
     {
         case 1:
+        {
             printf("\nEnter your Full Name:  ");
             takeinput(person.fullName);
             printf("\nEnter your email address:  ");
@@ -128,7 +129,40 @@ int main()
             {
                 printf("\n\nYour password donot matched.");
             }
-        break;
+            break;
+        }
+
+        case 2:
+        {
+            char username[50], pword[50];
+            struct userinformation person;
+            
+            printf("\nEnter your username: ");;
+            takeinput(username);
+            printf("\nEnter your password: ");
+            takepassword(pword);
+
+            fp = fopen("Users.txt", "r");
+            while (fread( &person, sizeof(struct userinformation), 1, fp))
+            {
+                if (!strcmp(person.username, username))
+                {
+                    if (!strcmp(person.password, pword))
+                    {
+                        printf("\n\t\t\t\t\t\tWelcome %s", person.fullName);
+                        printf("\n\n Full Name : \t%s", person.fullName);
+                        printf("\n\n Email : \t%s", person.email);
+                        printf("\n\n Username : \t%s", person.username);
+                        printf("\n\n Contact no : \t%s", person.phone);
+                    }
+                    else
+                    {
+                        printf("\n\nInvalid Password.");
+                    }
+                }
+            }
+
+        }
     }
     return 0;
 }
