@@ -106,8 +106,15 @@ int main()
                 printf("\n\nYour password matched.");
                 generateUsername(person.email, person.username);
                 fp = fopen("Users.txt", "a+");
-                fwrite(&person,sizeof(struct userinformation), 1, fp);
-                if (fwrite != 0)
+                //fwrite(&person,sizeof(struct userinformation), 1, fp);
+                if (fp == NULL)
+                {
+                    printf("\n\nError opening the file for saving information.");
+                    return 1;
+                }
+                fprintf(fp, "Full Name: %s \nEmail: %s \nPhone: %s \nPassword: %s \nUsername: %s\n\n",
+                person.fullName, person.email, person.phone, person.password, person.username);
+                if (fprintf != 0)
                 {
                     printf("\n\nUser registration is successful, Your user name is %s", person.username);
                 }
