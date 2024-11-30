@@ -22,12 +22,7 @@ int IntroMenu(const char arr[][30], int len)
 
     printf("\n\nEnter Choice : ");
     scanf("%d", &res);
-    if (res > len || res <= 0 && strcmp(arr[res - 1], "Exit") != 0)
-    {
-        char mes[20] = "\nInvalid Option";
-        Invalid_Error(mes);
-    }
-    else if (res == len && strcmp(arr[res - 1], "Logout") == 0)
+    if (res == len && strcmp(arr[res - 1], "Logout") == 0)
     {
         Logout();
     }

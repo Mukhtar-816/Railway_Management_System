@@ -10,6 +10,7 @@ struct userCredential
     char C_pwd[7];
 } user;
 
+
 void SignIn()
 {
     printf("Enter the username : ");
@@ -17,13 +18,13 @@ void SignIn()
     fgets(user.C_username, sizeof(user.C_username), stdin);
     user.C_username[strcspn(user.C_username, "\n")] = 0;
 
-    printf("\nEnter the password : ");
-    scanf("%s", &user.C_pwd);
+    printf("\nEnter your password:  ");
+    takepassword(user.C_pwd);
 
-    printf("\nValidating.....!");
+    printf("\n\nValidating.....!");
     Sleep(2000);
 
-    if (user.C_username != NULL && strlen(user.C_pwd) <= 6 && user.C_pwd != NULL)
+    if (user.C_username != NULL && user.C_pwd != NULL)
     {
         if (AuthValidator(user.C_username, user.C_pwd) == 1)
         {

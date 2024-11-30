@@ -31,9 +31,4 @@ void Authentication()
         InitiatingCall();
         remove("currentuser.txt");
     }
-    else
-    {
-        char msg[20] = "Invalid Input";
-        Invalid_Error(msg);
-    }
 }

@@ -1,6 +1,7 @@
-No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 111
+No : 103 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 108
 No : 104 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 117
 No : 105 Name : Express From : CityA To : CityB Cost : 500 Time : 10:00 Slots : 116
 No : 915 Name : Karyana From : Mir To : pak Cost : 567 Time : 09:00 Slots : 89
 
-No : 595 Name : Express From : Lahore To : Islamabad Cost : 7000 Time : 07:00 Slots : 4
+
+No : 233 Name : Exopress From : hyd To : khi Cost : 700 Time : 09:00 Slots : 5

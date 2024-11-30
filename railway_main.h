@@ -5,6 +5,7 @@
 //============================ USER/ADMIN Home ==========================//
 void InitiatingCall();
 void Home();
+void takepassword(char pwd[50]);
 
 
 //=========================== User Functions ==========================//
