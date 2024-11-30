@@ -74,7 +74,8 @@ int main()
 {
     char password2[50];
     FILE *fp;
-    printf("\n------------Welcome to the login portal of Railway Managemnet System--------------");
+    int correctuser = 0;
+    printf("\n------------Welcome to the application of Railway Managemnet System--------------");
     printf("\nSelect the option from the given menu");
     printf("\nPress 1 to Sign up");
     printf("\nPress 2 to Login the application");
@@ -107,22 +108,24 @@ int main()
                 printf("\n\nYour password matched.");
                 generateUsername(person.email, person.username);
                 fp = fopen("Users.txt", "a+");
-                //fwrite(&person,sizeof(struct userinformation), 1, fp);
                 if (fp == NULL)
                 {
                     printf("\n\nError opening the file for saving information.");
                     return 1;
                 }
-                fprintf(fp, "Full Name: %s \nEmail: %s \nPhone: %s \nPassword: %s \nUsername: %s\n\n",
+                //fwrite(&person,sizeof(struct userinformation), 1, fp);
+                
+                fprintf(fp, "%s\t%s\t%s\t%s\t%s\n",
                 person.fullName, person.email, person.phone, person.password, person.username);
-                if (fprintf != 0)
+                
+                /*if (fwrite != 0)
                 {
                     printf("\n\nUser registration is successful, Your user name is %s", person.username);
                 }
                 else
                 {
                     printf("\n\nSorry something went wrong.");
-                }
+                }*/
                 fclose(fp);
             }
             else
@@ -134,34 +137,63 @@ int main()
 
         case 2:
         {
-            char username[50], pword[50];
+            char username[50], password[50];
+            int correctuser = 0;
             struct userinformation person;
             
-            printf("\nEnter your username: ");;
+            printf("\nEnter your username: ");
             takeinput(username);
             printf("\nEnter your password: ");
-            takepassword(pword);
+            takepassword(password);
 
             fp = fopen("Users.txt", "r");
-            while (fread( &person, sizeof(struct userinformation), 1, fp))
+
+            if (fp == NULL) {
+                printf("\n\nError opening the file.");
+                break;
+            }
+            
+            //while (fread(&person, sizeof (struct userinformation), 1, fp))
+            
+            while (fscanf(fp, "%[^\t]\t%[^\t]\t%[^\t]\t%[^\t]\t%[^\n]\n",
+                          person.fullName, person.email, person.phone, person.password, person.username) != EOF)
             {
                 if (!strcmp(person.username, username))
                 {
-                    if (!strcmp(person.password, pword))
+                    if (!strcmp(person.password, password))
                     {
-                        printf("\n\t\t\t\t\t\tWelcome %s", person.fullName);
-                        printf("\n\n Full Name : \t%s", person.fullName);
-                        printf("\n\n Email : \t%s", person.email);
-                        printf("\n\n Username : \t%s", person.username);
-                        printf("\n\n Contact no : \t%s", person.phone);
+                        printf("\n\t\t\t\t\tWelcome %s", person.fullName);
+                        printf("\n\nFull Name:\t%s", person.fullName);
+                        printf("\nEmail:\t\t%s", person.email);
+                        printf("\nUsername:\t%s", person.username);
+                        printf("\nContact no:\t%s", person.phone);
+                        correctuser = 1;
+                        break;
                     }
                     else
                     {
                         printf("\n\nInvalid Password.");
+                        correctuser = 1;
+                        break;
                     }
-                }
+                }    
             }
+            fclose(fp);
 
+            if (!correctuser)
+                {
+                    printf("\n\nUser is not registered.");
+                }
+            break;
+        }
+        case 3:
+        {
+            printf("\t\t\t\tGood Bye.");
+            return 0;
+        }
+        default:
+        {
+            printf("Invalid option, Please select the correct option.");
         }
     }
     return 0;

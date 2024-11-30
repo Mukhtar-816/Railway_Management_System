@@ -1,13 +1,2 @@
-
-Full Name: Muhammad Bin Ismail 
-Email: muhammadbinismail1@gmail.com 
-Phone: 03121056324 
-Password: mahmood786 
-Username: muhammadbinismail1
-
-Full Name: Ahmed Khan 
-Email: ahmedkhan@gmail.com 
-Phone: 03332944202 
-Password: muh786 
-Username: ahmedkhan
-
+ Ahmed Khan	ahmedkhan@gmail.com	03121056324	muh786	ahmedkhan
+Muhammad Bin Ismail	muhammadbinismail1@gmail.com	033329203	muh7865	muhammadbinismail1
